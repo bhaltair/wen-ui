@@ -1,7 +1,6 @@
-# WEN UI
-> A fantastic mobile ui lib implement by Vue
-`WEN-UI` 是一款基于 `Vue.js 2.0` 的前端 UI 组件库，主要用于快速开发移动端产品
-[演示地址](https://vv-ui.github.io/VV-UI)
+# wenwen ui
+`wenwen-ui` 是一款基于 `Vue.js 2.0` 的前端 UI 组件库，主要用于快速开发移动端产品
+[演示地址](https://bhaltair.github.io/wenwen-ui)
 
 ## 特性
 
@@ -14,28 +13,20 @@
 - yarn
 
 ```bash
-yarn add wen-ui
-```
-
-- npm
-
-```bash
-npm install wen-ui --save
+npm install wenwen-ui --save
 ```
 
 ## 使用
 
 ```js
-import wenUi from 'wen-ui' // 引入组件库
-// import 'vvui/packages/theme-default/lib/index.css' // 引入样式库
-
-Vue.use(wenUi)
+import wenwenUI from 'wenwen-ui' // 引入组件库
+Vue.use(wenwenUI)
 ```
 
 ## 开发
 ```bash
-git clone git@github.com:didi/cube-ui.git
-cd wen-ui
+git clone git@github.com:bhaltair/wenwen-ui.git
+cd wenwen-ui
 npm install
 npm run dev
 # or run document development

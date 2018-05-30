@@ -3,11 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import WENUI from '../packages/index'
+// import WENUI from '../packages/index'
+// Vue.use(WENUI)
+
+// 当作插件引入
+import Button from '../packages/button'
+Vue.use(Button)
+
 // import '../packages/theme-default/lib/index.css'
 
 Vue.config.productionTip = false
-Vue.use(WENUI)
 
 /* eslint-disable no-new */
 new Vue({

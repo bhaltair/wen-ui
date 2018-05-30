@@ -1,4 +1,4 @@
-import Button from './button/index.js'
+import Button from './button/index'
 
 const components = [
   Button
@@ -17,7 +17,8 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
+export { Button }
+
 export default {
-  install,
-  Button
+  install
 }

@@ -6,7 +6,12 @@
 </template>
 
 <script>
+// import { Button } from '../../packages/index'
+import { Button } from '../../packages/index'
 export default {
+  components: {
+    [Button.name]: Button
+  }
 }
 </script>
 
