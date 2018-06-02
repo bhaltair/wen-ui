@@ -1,3 +1,4 @@
+@import './common/var.scss';
 .wen-button {
   border-radius: 3px;
   display: inline-block;
@@ -20,7 +21,7 @@
   border: 1px solid #eee;
 }
 .wen-button--primary {
-  background-color: #4b0;
+  background-color: $primary;
   color: #fff;
   padding: 0 8px;
 }

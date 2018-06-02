@@ -1,7 +1,7 @@
 <style lang="scss" type="text/scss" scoped>
   .page-footer {
-    position: fixed;
-    bottom: 0;
+    // position: fixed;
+    // bottom: 0;
     width: 100%;
     padding: 30px 0 30px;
     color: #6190E8;

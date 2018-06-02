@@ -27,6 +27,11 @@
           "name": "spinner",
           "path": "/spinner",
           "type": "pages"
+        },
+        {
+          "desc": "Navbar",
+          "name": "navbar",
+          "path": "/navbar"
         }
       ]
     }

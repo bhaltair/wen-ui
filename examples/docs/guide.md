@@ -9,9 +9,6 @@
 - 提供友好的 API，可灵活的使用组件
 
 ## 安装
-
-- yarn
-
 ```bash
 npm install wenwen-ui --save
 ```
@@ -20,13 +17,13 @@ npm install wenwen-ui --save
 
 ```js
 import wenwenUI from 'wenwen-ui' // 引入组件库
-import 'wenwen-ui/lib/theme-default/index.css';
+import 'wenwen-ui/dist/theme-default/index.css';
 Vue.use(wenwenUI)
 ```
 
 ## 开发
 ```bash
-git clone git@github.com:bhaltair/wenwen-ui.git
+git clone git@github.com:bhsaltair/wenwen-ui.git
 cd wenwen-ui
 npm install
 npm run dev
@@ -37,3 +34,12 @@ npm run storybook
 
 ## TODO
 - 发布tag： 需要编写脚本支持tag发布
+- navbar
+- toast
+- Loading
+- keyboard
+- 数字输入框
+- cell/cell-group
+- confirm
+- tabbar
+- tab

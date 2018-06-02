@@ -48,44 +48,4 @@ export default {
 
 <style lang="scss">
   @import "./assets/scss/index";
-* {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-:-webkit-autofill {
-  box-shadow: 0 0 0 100px #fff inset;
-  -webkit-text-fill-color: #574751;
-  color: #574751;
-}
-
-#app {
-}
-.demo-block {
-  margin-bottom: 10px;
-}
-
-.container {
-  margin: 48px auto;
-  width: 90%;
-  background-color: #fff;
-  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
-  .nav {
-    float: left;
-    width: 210px;
-  }
-  .view {
-    float: left;
-    width: calc('100% - 215px');
-    padding: 32px 48px 48px;
-    box-sizing: border-box;
-  }
-}
-.container:after {
-  content: "";
-  clear: both;
-  display: block;
-}
 </style>

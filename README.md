@@ -9,9 +9,6 @@
 - 提供友好的 API，可灵活的使用组件
 
 ## 安装
-
-- yarn
-
 ```bash
 npm install wenwen-ui --save
 ```
@@ -20,7 +17,7 @@ npm install wenwen-ui --save
 
 ```js
 import wenwenUI from 'wenwen-ui' // 引入组件库
-import 'wenwen-ui/lib/theme-default/index.css';
+import 'wenwen-ui/dist/theme-default/index.css';
 Vue.use(wenwenUI)
 ```
 

@@ -1,7 +1,9 @@
 import Button from './button/index'
 import Spinner from './spinner/index'
+import Navbar from './navbar/index'
 const components = [
-  Button
+  Button,
+  Navbar
 ]
 
 const install = function (Vue, options) {
@@ -20,5 +22,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
+  Navbar,
   Button
 }
