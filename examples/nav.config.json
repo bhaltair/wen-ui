@@ -1,14 +1,15 @@
 {
   "开发指南": [
     {
+      "name": "index",
+      "path": "/",
+      "desc": "首页",
+      "type": "pages"
+    },
+    {
       "name": "guide",
       "path": "/guide",
       "desc": "介绍"
-    },
-    {
-      "name": "index",
-      "path": "/",
-      "desc": "首页"
     }
   ],
   "组件": [
@@ -17,9 +18,15 @@
       "path": "/component",
       "items": [
         {
-          "desc": "Button 按钮",
+          "desc": "Button",
           "name": "button",
           "path": "/button"
+        },
+        {
+          "desc": "Spinner",
+          "name": "spinner",
+          "path": "/spinner",
+          "type": "pages"
         }
       ]
     }

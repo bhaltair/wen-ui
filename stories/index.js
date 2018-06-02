@@ -6,6 +6,7 @@ import { withNotes } from '@storybook/addon-notes';
 import { withReadme, withDocs } from 'storybook-readme';
 import ButtonReadme from '../packages/button/README.md';
 import MyButton from '../packages/button/button.vue';
+import './styles.css';
 
 storiesOf('MyButton', module)
   .add('types', withReadme(ButtonReadme, () => ({
@@ -20,11 +21,21 @@ storiesOf('MyButton', module)
   })))
   .add('with size', () => ({
     components: { MyButton },
-    template: '<my-button @click="action" type="primary" size="large">Hello Button233</my-button>',
+    template:
+      `
+        <div>
+          <my-button @click="action" type="primary" size="primary">Hello Button233</my-button>
+          <my-button @click="action" type="primary" size="small">Hello Button233</my-button>
+          <div class="demo-block">
+            <my-button @click="action" type="primary" size="large">Hello Button233</my-button>
+          </div>
+        </div>
+      `
+    ,
     methods: { action: action('clicked') }
   }))
-  .add('with some emoji', () => ({
+  .add('with disabled', () => ({
     components: { MyButton },
-    template: '<my-button @click="action">? ? ? ?</my-button>',
+    template: '<my-button @click="action" type="primary" disabled size="small">Hello Button233</my-button>',
     methods: { action: action('clicked') },
   }));

@@ -3,15 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import WENUI from '../packages/index'
-// Vue.use(WENUI)
-
-// 当作插件引入
-import Button from '../packages/button'
-Vue.use(Button)
-
-// import '../packages/theme-default/lib/index.css'
-
+import WENUI from '../packages/index'
+import '../packages/theme-default/lib/index.css'
+import demoBlock from './components/demo-block.vue'
+Vue.use(WENUI)
+Vue.component('demo-block', demoBlock)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

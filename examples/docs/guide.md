@@ -37,12 +37,3 @@ npm run storybook
 
 ## TODO
 - 发布tag： 需要编写脚本支持tag发布
-- navbar
-- toast
-- Loading
-- keyboard
-- 数字输入框
-- cell/cell-group
-- confirm
-- tabbar
-- tab

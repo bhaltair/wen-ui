@@ -22,8 +22,7 @@ let addComponent = (router) => {
         return
       }
       route.component = r => require.ensure([], () =>
-        // r(require(`../docs/${route.name}.md`)))
-        r(require(`../pages/${route.name}.vue`)))
+        r(require(`../docs/${route.name}.md`)))
     }
   })
 }
