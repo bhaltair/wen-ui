@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="wen-navbar wen-hairline--bottom">
     <div class="wen-navbar__left" @click="$emit('onLeftClick')">
-      <i class="fas fa-chevron-left"></i>
+      <i class="iconfont icon-back wen-navbar__icon"></i>  
     </div>
     <div class="wen-navbar__center">
       {{ title }}

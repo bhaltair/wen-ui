@@ -23,7 +23,7 @@ Vue.use(wenwenUI)
 
 ## 开发
 ```bash
-git clone git@github.com:bhaltair/wenwen-ui.git
+git clone git@github.com:bhsaltair/wenwen-ui.git
 cd wenwen-ui
 npm install
 npm run dev
@@ -34,8 +34,6 @@ npm run storybook
 
 ## TODO
 - 发布tag： 需要编写脚本支持tag发布
-- navbar
-- toast
 - Loading
 - keyboard
 - 数字输入框
@@ -43,3 +41,4 @@ npm run storybook
 - confirm
 - tabbar
 - tab
+- 将文档发布到 gh-pages

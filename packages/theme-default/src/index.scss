@@ -1,10 +1,10 @@
-// base
 @import "./common/base.scss";
 @import "./common/var.scss";
 @import "./common/1px.scss";
 @import "./common/animation.scss";
-
-// component
+@import "./common/font.scss";
 @import "button.scss";
 @import "spinner.scss";
 @import "navbar.scss";
+@import "toast.scss";
+@import "cell.scss";

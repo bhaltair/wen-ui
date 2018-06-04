@@ -9,6 +9,6 @@
 
 ::: demo
 ```html
-<wen-navbar />
+<wen-navbar right="点我"/>
 ```
 :::

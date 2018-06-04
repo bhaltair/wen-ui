@@ -1,9 +1,12 @@
 import Button from './button/index'
 import Spinner from './spinner/index'
 import Navbar from './navbar/index'
+import Toast from './toast/index'
+import Cell from './cell/index'
 const components = [
   Button,
-  Navbar
+  Navbar,
+  Cell
 ]
 
 const install = function (Vue, options) {
@@ -12,8 +15,7 @@ const install = function (Vue, options) {
     Vue.component(component.name, component)
   })
   Vue.prototype.$spinner = Spinner
-  // Vue.prototype.$loading = Loading;
-  // Vue.prototype.$message = Message;
+  Vue.prototype.$toast = Toast
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -23,5 +25,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   Navbar,
-  Button
+  Button,
+  Cell
 }

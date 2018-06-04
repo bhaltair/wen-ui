@@ -32,6 +32,17 @@
           "desc": "Navbar",
           "name": "navbar",
           "path": "/navbar"
+        },
+        {
+          "desc": "Toast",
+          "name": "toast",
+          "path": "/toast",
+          "type": "pages"
+        },
+        {
+          "desc": "Cell",
+          "name": "cell",
+          "path": "/cell"
         }
       ]
     }

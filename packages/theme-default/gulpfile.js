@@ -23,6 +23,12 @@ gulp.task('copyfont', function() {
 
 gulp.task('build', ['compile', 'copyfont']);
 
+gulp.task('some', function() {
+  console.log('task some')
+})
 gulp.task('watch', function () {
-  gulp.watch('./src/*.scss', ['build'])
+  var watcher =  gulp.watch('src/*.scss', ['build'])
+  watcher.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+});
 })
