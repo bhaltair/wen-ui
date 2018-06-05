@@ -19,6 +19,8 @@
       return {
         height: document.documentElement.clientHeight
       }
+    },
+    created() {
     }
   }
 </script>

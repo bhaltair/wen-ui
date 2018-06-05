@@ -43,6 +43,12 @@
           "desc": "Cell",
           "name": "cell",
           "path": "/cell"
+        },
+        {
+          "desc": "Tab",
+          "name": "tab",
+          "path": "/tab",
+          "type": "pages"
         }
       ]
     }

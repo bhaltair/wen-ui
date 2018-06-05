@@ -1,0 +1,26 @@
+@import './common/var.scss';
+.wen-tabs {
+  &-nav {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    color: $text-color;
+    > div {
+      flex: 1;
+      text-align: center;
+      &:active {
+        background-color: $active-color;
+      }
+    }
+  }
+  &-content {
+    background-color: #fff;
+  }
+}
+
+.wen-tab {
+  &--active {
+    color: $red;
+  }
+}

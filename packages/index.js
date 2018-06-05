@@ -3,10 +3,14 @@ import Spinner from './spinner/index'
 import Navbar from './navbar/index'
 import Toast from './toast/index'
 import Cell from './cell/index'
+import Tab from './tab/index'
+import Tabs from './tabs/index'
 const components = [
   Button,
   Navbar,
-  Cell
+  Cell,
+  Tabs,
+  Tab
 ]
 
 const install = function (Vue, options) {
@@ -26,5 +30,7 @@ export default {
   install,
   Navbar,
   Button,
-  Cell
+  Cell,
+  Tabs,
+  Tab
 }

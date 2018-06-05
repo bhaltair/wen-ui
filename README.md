@@ -34,11 +34,8 @@ npm run storybook
 
 ## TODO
 - 发布tag： 需要编写脚本支持tag发布
-- Loading
 - keyboard
 - 数字输入框
-- cell/cell-group
 - confirm
 - tabbar
 - tab
-- 将文档发布到 gh-pages
