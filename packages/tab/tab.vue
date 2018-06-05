@@ -17,6 +17,10 @@ export default {
     this.findParent('wen-tabs');
     this.parent.tabs.push(this);
   },
+  destroyed() {
+    // console.log('destroyed')
+    // this.parent.tabs.splice(this.index, 1);
+  },
   computed: {
     index() {
       return this.parent.tabs.indexOf(this);

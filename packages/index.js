@@ -5,12 +5,14 @@ import Toast from './toast/index'
 import Cell from './cell/index'
 import Tab from './tab/index'
 import Tabs from './tabs/index'
+import List from './list/index'
 const components = [
   Button,
   Navbar,
   Cell,
   Tabs,
-  Tab
+  Tab,
+  List
 ]
 
 const install = function (Vue, options) {
@@ -32,5 +34,6 @@ export default {
   Button,
   Cell,
   Tabs,
-  Tab
+  Tab,
+  List
 }

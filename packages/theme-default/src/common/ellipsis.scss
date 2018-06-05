@@ -1,0 +1,5 @@
+@import '../mixins/ellipsis.scss';
+
+.wen-ellipsis {
+  @include ellipsis();
+}

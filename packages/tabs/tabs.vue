@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="wen-tabs-nav wen-hairline--bottom">
+      <div class="wen-tabs-line" :style="lineStyle" />
       <div v-for="(tab, index) in tabs" :key="index" ref="tabs" class="wen-tab"
           :class="{
             'wen-tab--active': index === curActive,
@@ -23,19 +24,44 @@ export default {
   data() {
     return {
       tabs: [],
-      curActive: 0
+      curActive: 0,
+      lineStyle: {}
     }
   },
   model: {
     prop: 'active'
   },
+  watch: {
+    curActive() {
+      this.setLine();
+    }
+  },
   props: {
+    duration: {
+      type: Number,
+      default: 0.2
+    },
     active: {
       type: [Number, String],
       default: 0
     }
   },
   methods: {
+    setLine() {
+      this.$nextTick(() => {
+        if (!this.$refs.tabs) {
+          return;
+        }
+        const tab = this.$refs.tabs[this.curActive];
+        const width = this.lineWidth || tab.offsetWidth;
+        const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
+        this.lineStyle = {
+          width: `${width}px`,
+          transform: `translateX(${left}px)`,
+          transitionDuration: `${this.duration}s`
+        };
+      })
+    },
     onClick(index) {
       const { title, disabled } = this.tabs[index];
       this.$emit('click', index, title)
@@ -54,6 +80,7 @@ export default {
   },
   mounted() {
     this.correctActive(this.active);
+    this.setLine();
   }
 }
 </script>

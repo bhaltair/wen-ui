@@ -16,7 +16,8 @@
     "build:doc": "node build/build.js",
     "build:components": "node build/build-component.js",
     "build:theme": "gulp build --gulpfile packages/theme-default/gulpfile.js && cp-cli packages/theme-default/lib dist/theme-default",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy": "npm run build:doc && git subtree push --prefix dist origin gh-pages"
   },
   "license": "MIT",
   "files": [

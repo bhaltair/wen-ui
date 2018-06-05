@@ -38,4 +38,3 @@ npm run storybook
 - 数字输入框
 - confirm
 - tabbar
-- tab

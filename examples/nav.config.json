@@ -10,6 +10,11 @@
       "name": "guide",
       "path": "/guide",
       "desc": "介绍"
+    },
+    {
+      "desc": "内置样式",
+      "name": "style",
+      "path": "/style"
     }
   ],
   "组件": [
@@ -48,6 +53,12 @@
           "desc": "Tab",
           "name": "tab",
           "path": "/tab",
+          "type": "pages"
+        },
+        {
+          "desc": "List",
+          "name": "list",
+          "path": "/list",
           "type": "pages"
         }
       ]
