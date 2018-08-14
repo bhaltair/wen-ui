@@ -6,13 +6,25 @@ import Cell from './cell/index'
 import Tab from './tab/index'
 import Tabs from './tabs/index'
 import List from './list/index'
+import Loading from './loading/index'
+import Switch from './switch/index'
+import SwitchCell from './switch-cell/index'
+import Icon from './icon/index'
+import Upload from './upload/index'
+import Actionsheet from './actionsheet/index'
 const components = [
   Button,
   Navbar,
   Cell,
   Tabs,
   Tab,
-  List
+  List,
+  Loading,
+  Switch,
+  SwitchCell,
+  Icon,
+  Upload,
+  Actionsheet
 ]
 
 const install = function (Vue, options) {
@@ -35,5 +47,11 @@ export default {
   Cell,
   Tabs,
   Tab,
-  List
+  List,
+  Loading,
+  Switch,
+  SwitchCell,
+  Icon,
+  Upload,
+  Actionsheet
 }

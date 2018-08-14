@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="wen-navbar wen-hairline--bottom">
-    <div class="wen-navbar__left" @click="$emit('onLeftClick')">
-      <i class="iconfont icon-back wen-navbar__icon"></i>  
+    <div class="wen-navbar__left" @click="$emit('leftClick')">
+      <i class="iconfont icon-back wen-navbar__icon"></i>
     </div>
     <div class="wen-navbar__center">
       {{ title }}
@@ -18,11 +18,11 @@ export default {
   props: {
     title: {
       type: String,
-      default: '标题'
+      default: ''
     },
     right: {
       type: String,
-      default: '按钮'
+      default: ''
     }
   }
 }

@@ -1,13 +1,14 @@
 {
   "name": "wenwen-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vue.js project",
   "author": "wangqi <wangqi@hemayun.com>",
   "private": false,
-  "main": "dit/wenwen-ui.min.js",
+  "main": "dist/wenwen-ui.min.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev:site": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "dev:theme": "gulp watch --gulpfile packages/theme-default/gulpfile.js",
+    "dev:examples": "cd examples && npm run serve",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
@@ -17,7 +18,7 @@
     "build:components": "node build/build-component.js",
     "build:theme": "gulp build --gulpfile packages/theme-default/gulpfile.js && cp-cli packages/theme-default/lib dist/theme-default",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy": "npm run build:doc && git subtree push --prefix dist origin gh-pages"
+    "deploy:site": "npm run build:doc && git subtree push --prefix dist origin gh-pages"
   },
   "license": "MIT",
   "files": [

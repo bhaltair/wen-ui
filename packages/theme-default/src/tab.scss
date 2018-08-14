@@ -1,29 +1,59 @@
 @import './common/var.scss';
 .wen-tabs {
   position: relative;
+  &.jsSticky {
+    padding-top: 40px;
+  }
   &-line {
     position: absolute;
-    top: 38px;
+    bottom: 15px;
     z-index: 1;
     left: 0;
     height: 2px;
     background-color: #f44;
   }
   &-nav {
+    position: relative;
     display: flex;
-    height: 40px;
-    line-height: 40px;
+    height: 100%;
     background-color: #fff;
     color: $text-color;
-    // height: 100%;
-    // padding-bottom: 15px;
-    // box-sizing: content-box;
-    > div {
+    padding-bottom: 15px;
+    box-sizing: content-box;
+    &__wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 40px;
+      z-index: 99;
+      overflow: hidden;
+      &.page-top {
+        position: fixed;
+        width: 100%;
+        top: 0;
+      }
+      &.content-bottom {
+        top: auto;
+        bottom: 0;
+      }
+    }
+    > .wen-tab {
       flex: 1;
       text-align: center;
+      line-height: 40px;
       font-size: 14px;
       color: $text-color;
       cursor: pointer;
+      padding: 0 5px;
+      box-sizing: border-box;
+      min-width: 0;
+      &--active {
+        color: $red;
+      }
+      > span {
+        display: block;
+      }
       &:active {
         background-color: $active-color;
       }
@@ -31,11 +61,5 @@
   }
   &-content {
     background-color: #fff;
-  }
-}
-
-.wen-tab {
-  &--active {
-    color: $red;
   }
 }

@@ -30,6 +30,6 @@ export default {
   getVisibleHeight (element) {
     return element === window ? element.innerHeight : element.getBoundingClientRect().height
   },
-  // 不能理解
+  // 兼容火狐
   getComputedStyle: !isServer && document.defaultView.getComputedStyle.bind(document.defaultView)
 }

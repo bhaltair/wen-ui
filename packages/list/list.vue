@@ -2,6 +2,7 @@
   <div class="wen-list">
     <slot />
     <div class="wen-list-loading" >
+      <wen-loading color="black" style="display:inline-block" size="20px"></wen-loading>
       <span class="wen-list-loading-text">加载中...</span>
     </div>
   </div>
@@ -60,7 +61,7 @@ export default {
       if (!scrollerHeight || utils.getComputedStyle(el).display === 'none') {
         return;
       }
-      const scrollTop = utils.getScrollTop(scroller);
+      const scrollTop = utils.getScrollTop(scroller); // scrollTop = 0
       const targetBottom = scrollTop + scrollerHeight;
       let reachBottom = false;
       if (el === scroller) {

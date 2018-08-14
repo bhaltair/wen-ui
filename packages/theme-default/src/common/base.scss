@@ -1,9 +1,16 @@
 * {
   user-select: none;
+  box-sizing: border-box;
 }
 
 html {
   -webkit-tap-highlight-color: transparent;
+}
+
+p,
+div {
+  margin: 0;
+  padding: 0;
 }
 
 body {
