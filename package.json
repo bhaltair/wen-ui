@@ -6,7 +6,7 @@
   "private": false,
   "main": "dist/wenwen-ui.min.js",
   "scripts": {
-    "dev:site": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev:doc": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "dev:theme": "gulp watch --gulpfile packages/theme-default/gulpfile.js",
     "dev:examples": "cd examples && npm run serve",
     "start": "npm run dev",

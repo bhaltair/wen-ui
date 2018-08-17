@@ -1,7 +1,6 @@
 # wenwen ui
 `wenwen-ui` 是一款基于 `Vue.js 2.0` 的前端 UI 组件库，主要用于快速开发移动端产品
 [演示地址](https://bhaltair.github.io/wenwen-ui)
-[examples](https://bhaltair.github.io/wenwen-ui-example/#/)
 
 ## 特性
 
@@ -24,20 +23,11 @@ Vue.use(wenwenUI)
 
 ## 开发
 ```bash
-git clone git@github.com:bhsaltair/wenwen-ui.git
+git clone git@github.com:bhaltair/wenwen-ui.git
 cd wenwen-ui
 npm install
 npm run dev
-# or run document development
+# or run storybook development
 npm run storybook
 
 ```
-
-## TODO
-- 发布tag： 需要编写脚本支持tag发布
-- keyboard
-- 数字输入框
-- confirm
-- tabbar
-
-[漫谈Vue组件库开发](http://jdc.jd.com/archives/212167)

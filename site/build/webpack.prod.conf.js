@@ -18,7 +18,7 @@ const env = process.env.NODE_ENV === 'testing'
 const webpackConfig = merge(baseWebpackConfig, {
   context: path.resolve(__dirname, '../'),
   entry: {
-    index: './site/main'
+    index: './examples/main'
   },
   module: {
     rules: utils.styleLoaders({
