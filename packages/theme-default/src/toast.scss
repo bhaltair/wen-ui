@@ -1,7 +1,7 @@
-.toast {
+.wen-toast {
   transition: opacity .2s;
 }
-.toast__container {
+.wen-toast__container {
   position: fixed;
   padding: 12px;
   top: 50%;
@@ -29,7 +29,7 @@
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(0, 0, 0, .7);
 }
-.toast__text {
+.wen-toast__text {
   color: white;
   font-size: 14px;
 }

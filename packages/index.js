@@ -12,6 +12,7 @@ import SwitchCell from './switch-cell/index'
 import Icon from './icon/index'
 import Upload from './upload/index'
 import Actionsheet from './actionsheet/index'
+import Modal from './modal/index'
 const components = [
   Button,
   Navbar,
@@ -34,6 +35,7 @@ const install = function (Vue, options) {
   })
   Vue.prototype.$spinner = Spinner
   Vue.prototype.$toast = Toast
+  Vue.prototype.$modal = Modal
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

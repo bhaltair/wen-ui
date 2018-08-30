@@ -9,19 +9,24 @@
   color: #333;
   font-size: 14px;
   overflow: hidden;
-  &:active {
-    background-color: $active-color;
+  position: relative;
+  &-active {
+    &:active {
+      background-color: $active-color;
+    }
   }
   &-switch:active {
     background-color: #fff;
   }
   &__left {
     flex: 1;
+    color: #4a4a4a;
   }
   &__right {
     flex: 1;
     font-size: 12px;
     text-align: right;
+    color: #9b9b9b;
   }
   &__icon {
     color: #999;

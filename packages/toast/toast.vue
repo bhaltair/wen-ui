@@ -1,7 +1,7 @@
 <template>
-  <div class="toast" v-show="show">
-    <div class="toast__container">
-      <div class="toast__text">{{text}}</div>
+  <div class="wen-toast" v-show="show">
+    <div class="wen-toast__container">
+      <div class="wen-toast__text">{{text}}</div>
     </div>
   </div>
 </template>

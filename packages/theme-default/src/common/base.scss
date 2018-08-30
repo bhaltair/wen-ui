@@ -1,6 +1,9 @@
 * {
-  user-select: none;
   box-sizing: border-box;
+}
+
+*:not(input) {
+  -webkit-user-select: none;
 }
 
 html {
