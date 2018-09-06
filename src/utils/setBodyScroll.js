@@ -7,6 +7,8 @@ function stopBodyScroll (isFixed) {
 
     bodyEl.style.position = 'fixed'
     bodyEl.style.top = -top + 'px'
+    bodyEl.style.left = '0px'
+    bodyEl.style.right = '0px'
   } else {
     bodyEl.style.position = ''
     bodyEl.style.top = ''

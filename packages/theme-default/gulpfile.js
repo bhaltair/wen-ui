@@ -1,23 +1,23 @@
 'use strict';
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var cssmin = require('gulp-cssmin');
-
+var postcss = require('gulp-postcss')
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+var browsers = ['ie > 9', 'last 2 versions', 'Android >= 4.0', 'iOS >= 7', 'Safari >= 8'];
 gulp.task('compile', function() {
-  return gulp.src('./src/*.scss')
-    .pipe(sass.sync())
-    .pipe(autoprefixer({
-      browsers: ['ie > 9', 'last 2 versions'],
-      cascade: false
-    }))
-    .pipe(cssmin())
+  var plugins = [
+    autoprefixer({ browsers }),
+    cssnano()
+  ];  
+  return gulp.src('./src/index.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(plugins))
     .pipe(gulp.dest('./lib'));
 });
 
 gulp.task('copyfont', function() {
   return gulp.src('./src/fonts/**')
-    .pipe(cssmin())
     .pipe(gulp.dest('./lib/fonts'));
 });
 

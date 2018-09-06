@@ -1,4 +1,4 @@
-<template lang="html">
+<template >
   <div class="wen-navbar wen-hairline--bottom">
     <div class="wen-navbar__left" @click="$emit('leftClick')">
       <i class="iconfont icon-back wen-navbar__icon"></i>

@@ -1,5 +1,4 @@
-// import Toast from './toast.vue';
-import ToastComponent from './toast'
+import ToastComponent from './toast.vue'
 import Vue from 'vue'
 import mergeOptions from '../../src/utils/merge'
 

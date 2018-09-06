@@ -1,4 +1,4 @@
-import SpinnerComponent from './spinner'
+import SpinnerComponent from './spinner.vue'
 import Vue from 'vue'
 import mergeOptions from '../../src/utils/merge'
 

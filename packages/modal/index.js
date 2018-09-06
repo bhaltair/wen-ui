@@ -1,4 +1,4 @@
-import ModalComponent from './modal'
+import ModalComponent from './modal.vue'
 import Vue from 'vue'
 import mergeOptions from '../../src/utils/merge'
 import setBodyScroll from '../../src/utils/setBodyScroll'

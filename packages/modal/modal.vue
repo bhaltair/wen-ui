@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="modal-confirm" v-show="show" :class="{ 'modal-toast' : type === 'toast' } ">
-      <div class="modal-confirm__content">
+    <div class="wen-modal-confirm" v-show="show" :class="{ 'wen-modal-toast' : type === 'toast' } ">
+      <div class="wen-modal-confirm__content">
         <div class="content">
           <h3>
             <slot></slot>

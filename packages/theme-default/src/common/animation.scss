@@ -1,16 +1,16 @@
-@keyframes van-slide-bottom-enter {
+@keyframes wen-slide-bottom-enter {
   from {
     transform: translate3d(0, 100%, 0);
   }
 }
 
-@keyframes van-slide-bottom-leave {
+@keyframes wen-slide-bottom-leave {
   to {
     transform: translate3d(0, 100%, 0);
   }
 }
 
-@keyframes van-fade-in {
+@keyframes wen-fade-in {
   from {
     opacity: 0;
   }
@@ -19,7 +19,7 @@
   }
 }
 
-@keyframes van-fade-out {
+@keyframes wen-fade-out {
   from {
     opacity: 1;
   }
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes van-rotate {
+@keyframes wen-rotate {
   from {
     transform: rotate(0deg);
   }
@@ -37,22 +37,22 @@
   }
 }
 
-.van-fade {
+.wen-fade {
   &-enter-active {
-    animation: .3s van-fade-in;
+    animation: .3s wen-fade-in;
   }
 
   &-leave-active {
-    animation: .3s van-fade-out;
+    animation: .3s wen-fade-out;
   }
 }
 
-.van-slide-bottom {
+.wen-slide-bottom {
   &-enter-active {
-    animation: van-slide-bottom-enter .3s both ease;
+    animation: wen-slide-bottom-enter .3s both ease;
   }
 
   &-leave-active {
-    animation: van-slide-bottom-leave .3s both ease;
+    animation: wen-slide-bottom-leave .3s both ease;
   }
 }

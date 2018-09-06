@@ -1,10 +1,10 @@
 <template>
-  <div class="spinner" v-show="show">
-    <div class="spinner__container">
-      <div class="lds-spinner" style="100%;height:100%"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-      <div class="spinner__text">{{text}}</div>
+  <div class="wen-spinner" v-show="show">
+    <div class="wen-spinner__container">
+      <div class="wen-lds-spinner" style="100%;height:100%"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div class="wen-spinner__text">{{text}}</div>
     </div>
-    <div class="spinner__overlay"></div>
+    <div class="wen-spinner__overlay"></div>
   </div>
 </template>
 
