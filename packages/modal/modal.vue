@@ -60,6 +60,7 @@ export default {
     hideClick () {
       this.show = false
       setBodyScroll()
+      this.$emit('on-hide')
     },
     unbindClick () {
       this.hideClick()

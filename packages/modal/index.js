@@ -35,13 +35,19 @@ const modal = {
 
     setBodyScroll(true)
 
+    // 清空监听函数
     $vm.$off('on-unbind')
+    $vm.$off('on-hide')
 
     $vm.$slots.default = [ options.renderImage() ]
 
     $vm.$on('on-unbind', () => {
       options && options.onUnbind && options.onUnbind()
       setBodyScroll()
+    })
+
+    $vm.$on('on-hide', () => {
+      options && options.onHide && options.onHide()
     })
 
     $vm.show = true
