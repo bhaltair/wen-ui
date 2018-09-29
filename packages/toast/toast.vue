@@ -27,6 +27,11 @@ export default {
   watch: {
     show (val) {
       this.$emit('on-show')
+      if (!val) return
+      this.timeout && clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        this.show = false
+      }, 2000)
     }
   }
 }

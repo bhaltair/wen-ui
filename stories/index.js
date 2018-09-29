@@ -7,6 +7,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import ButtonReadme from '../packages/button/README.md';
 import MyButton from '../packages/button/button.vue';
 import './styles.css';
+import "wenwen-ui/dist/theme-default/index.css";
 
 storiesOf('MyButton', module)
   .add('types', withReadme(ButtonReadme, () => ({

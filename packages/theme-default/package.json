@@ -1,5 +1,5 @@
 {
-  "name": "wenwen-ui-theme-chalk",
+  "name": "wenwen-ui-theme-default",
   "version": "2.3.9",
   "description": "Element component chalk theme.",
   "main": "lib/index.css",

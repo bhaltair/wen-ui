@@ -49,13 +49,11 @@
   left: 60px;
   top: 30px;
   position: absolute;
-  -webkit-animation: lds-spinner linear 1s infinite;
-  animation: lds-spinner linear 1s infinite;
+  animation: wen-lds-spinner linear 1s infinite;
   background: #fff;
   width: 6px;
   height: 12px;
   border-radius: 40%;
-  /* -webkit-transform-origin: 6px 52px; */
   transform-origin: 3px 26px;
 }
 .wen-lds-spinner div:nth-child(1) {

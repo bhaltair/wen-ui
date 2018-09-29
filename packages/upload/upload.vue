@@ -1,79 +1,113 @@
 <template>
   <div class="wen-upload">
-    <wen-icon name="upload" ></wen-icon>
-    <input class="wen-upload__input" type="file" :accept="accept" name="file" @change="onChange"><br>
+    <slot></slot>
+    <input v-bind="$attrs" ref="input" class="wen-upload__input" type="file" name="file" @change="onChange"><br>
   </div>
 </template>
 
 <script>
 export default {
   name: 'wen-upload',
-  data() {
+  inheritAttrs: false,
+  data () {
     return {
       src: ''
     }
   },
   props: {
-    disabled: Boolean,
     beforeRead: Function,
     afterRead: Function,
-    accept: {
-      type: String,
-      default: 'image/*'
-    },
+    success: Function,
+    uploadUrl: String,
     resultType: {
       type: String,
       default: 'dataUrl'
+    },
+    maxSize: {
+      type: Number,
+      default: Number.MAX_VALUE
     }
   },
   methods: {
-    onChange(event) {
-      let { files } = event.target;
+    onChange (event) {
+      let { files } = event.target
       if (this.disabled || !files.length) {
-        return;
+        return
       }
-      files = files.length === 1 ? files[0] : [].slice.call(files, 0);
+      files = files.length === 1 ? files[0] : [].slice.call(files, 0)
       if (!files || (this.beforeRead && !this.beforeRead(files))) {
-        return;
+        return
       }
-      this.readFile(files).then(content => {
-        this.afterRead({
-          file: files,
-          content
+      if (Array.isArray(files)) {
+        Promise.all(files.map(this.readFile)).then(contents => {
+          let oversize = false
+          const payload = files.map((file, index) => {
+            if (file.size > this.maxSize) {
+              oversize = true
+            }
+            return {
+              file: files[index],
+              content: contents[index]
+            }
+          })
+          this.onAfterRead(payload, oversize)
+          this.$refs.input && (this.$refs.input.value = '')
         })
+      } else {
+        this.readFile(files).then(content => {
+          this.onAfterRead([{
+            file: files,
+            content
+          }], files.size > this.maxSize)
+        })
+      }
+    },
+    onAfterRead (files = [], oversize = false) {
+      if (oversize) {
+        return this.$emit('oversize', true)
+      }
+      this.afterRead && this.afterRead(files)
+      // 开始上传
+      files.map(file => {
+        this.uploadFile(file.file)
       })
     },
-    readFile(file) {
+    readFile (file) {
       return new Promise(resolve => {
-        const reader = new FileReader();
+        const reader = new FileReader()
         reader.onload = event => {
-          // resolve(event.target.result);
-          resolve(reader.result);
-        };
-        if (this.resultType === 'dataUrl') {
-          reader.readAsDataURL(file);
-        } else if (this.resultType === 'text') {
-          reader.readAsText(file);
+          resolve(event.target.result)
         }
-      });
+        if (this.resultType === 'dataUrl') {
+          reader.readAsDataURL(file)
+        } else if (this.resultType === 'text') {
+          reader.readAsText(file)
+        }
+      })
     },
-    uploadFile(event) {
-      var files = event.target.files;
-      var formData = new FormData();
-      var request = new XMLHttpRequest();
-
-      for (var i = 0, len = files.length; i < len; i++) {
-        formData.append('userUploadFile', files[i]);
+    uploadFile (file) {
+      var fd = new FormData()
+      var request = new XMLHttpRequest()
+      fd.append('uploadfile', file)
+      request.open('POST', this.uploadUrl)
+      const progressFn = (oEvent) => {
+        if (oEvent.lengthComputable) {
+          var percentComplete = Math.floor(oEvent.loaded / oEvent.total * 100)
+          this.$emit('changed', percentComplete)
+        } else {
+          // Unable to compute progress information since the total size is unknown
+        }
       }
-
-      request.open('POST', 'https://jsonplaceholder.typicode.com/posts/');
-      request.send(formData);
-
-      request.onload = function(event) {
-        console.log(event)
-        // var oResponse = JSON.parse(event.target.response);
-        // do something
+      const successFn = (event) => {
+        this.success(event.loaded / event.total * 100)
       }
+      const errorFn = res => {
+        this.$emit('uploadErr')
+      }
+      request.addEventListener('load', successFn, false)
+      request.upload.addEventListener('progress', progressFn, false)
+      request.addEventListener('error', errorFn, false)
+      request.send(fd)
     }
   }
 }

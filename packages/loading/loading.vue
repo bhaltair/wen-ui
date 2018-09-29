@@ -29,11 +29,11 @@ export default {
     }
   },
   computed: {
-    style() {
+    style () {
       return this.size ? {
         width: this.size,
         height: this.size
-      } : {};
+      } : {}
     }
   }
 }
