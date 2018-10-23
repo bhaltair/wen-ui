@@ -1,4 +1,4 @@
-import Modal from './Modal'
+import Modal from './Modal.vue'
 import Vue from 'vue'
 export default {
   props: {

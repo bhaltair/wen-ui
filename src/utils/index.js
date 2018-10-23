@@ -27,10 +27,15 @@ function camelize (str) {
   return str.replace(camelizeRE, (_, c) => c.toUpperCase())
 }
 
+const isArray = (something)=>{
+  return Object.prototype.toString.call(something) === '[object Array]';
+}
+
 export {
   get,
   isObj,
   isDef,
   isServer,
-  camelize
+  camelize,
+  isArray
 }

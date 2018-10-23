@@ -21,10 +21,12 @@ export default {
   },
   computed: {
     style () {
-      return {
-        zIndex: this.zIndex,
-        ...this.customStyle
+      const obj = {}
+      obj.zIndex = this.zIndex
+      for (let i in this.customStyle) {
+        obj[i] = this.customStyle[i]
       }
+      return obj
     }
   }
 }

@@ -88,3 +88,19 @@
     }
   }
 }
+
+.wen-modal-confirm {
+  .wen-modal-confirm__content-lines {
+    .content {
+      padding-bottom: 12px;
+      h3 {
+        margin-bottom: 12px;
+      }
+      p {
+        text-align: left!important;
+        margin: 0;
+        line-height: 1.7;
+      }
+    }
+  }
+}

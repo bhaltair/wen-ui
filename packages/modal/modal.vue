@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="wen-modal-confirm" v-show="show" :class="{ 'wen-modal-toast' : type === 'toast' } ">
-      <div class="wen-modal-confirm__content">
-        <div class="content">
+      <div class="wen-modal-confirm__content" :class="{ 'wen-modal-confirm__content-lines' : isArray(text) } ">
+        <div class="content" >
           <h3>
             <slot></slot>
             {{title}}
           </h3>
-          <p v-if="text" :style="{ fontSize }">{{text}}</p>
+          <template v-if="isArray(text)" >
+            <p :style="{ fontSize }" v-for="(item, index) in text" :key="index">{{item}}</p>
+          </template>
+          <template v-else>
+            <p v-if="text" :style="{ fontSize }">{{text}}</p>
+          </template>
         </div>
         <div class="bar">
           <div @click="unbindClick" v-if="leftBtnText">{{ leftBtnText }}</div>
@@ -22,6 +27,7 @@
 
 <script>
 import setBodyScroll from '../../src/utils/setBodyScroll'
+import { isArray } from '../../src/utils'
 export default {
   name: 'WenModal',
   data () {
@@ -42,7 +48,7 @@ export default {
       default: ''
     },
     text: {
-      type: String,
+      type: [String, Array],
       default: ''
     },
     btnText: {
@@ -57,6 +63,7 @@ export default {
     }
   },
   methods: {
+    isArray,
     hideClick () {
       this.show = false
       setBodyScroll()
