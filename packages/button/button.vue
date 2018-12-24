@@ -2,7 +2,8 @@
   <div class="wen-button " :class="{
     'wen-button--default': type === 'default',
     'wen-button--primary': type === 'primary',
-    'wen-button--normal': size === 'normal',
+    'wen-button--warn': type === 'warn',
+    'wen-button--middle': size === 'middle',
     'wen-button--large': size === 'large',
     'wen-button--small': size === 'small',
     'wen-button--disabled': disabled === true
@@ -25,7 +26,7 @@ export default {
     },
     size: {
       type: String,
-      default: 'normal'
+      default: 'middle'
     }
   },
   methods: {

@@ -1,6 +1,6 @@
 {
   "name": "wenwen-ui",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "A Vue.js project",
   "author": "wangqi <wangqi@hemayun.com>",
   "private": false,
@@ -13,6 +13,7 @@
     "build:umd": "rollup --config build/rollup.umd.config.js --format umd --file dist/index.umd.js",
     "build:theme": "rm dist/theme-default/index.css && rm -r packages/theme-default/lib && gulp build --gulpfile packages/theme-default/gulpfile.js && cp-cli packages/theme-default/lib/index.css dist/theme-default/index.css",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "unit2": "jest --config test/unit/jest.conf.js",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs"
@@ -42,6 +43,7 @@
     "@storybook/addon-links": "^3.4.6",
     "@storybook/addon-notes": "^3.4.6",
     "@storybook/vue": "^3.4.6",
+    "@vue/test-utils": "^1.0.0-beta.25",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",

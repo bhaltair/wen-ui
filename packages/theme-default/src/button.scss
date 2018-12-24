@@ -3,12 +3,15 @@
   border-radius: 3px;
   display: inline-block;
   cursor: pointer;
-  font-size: 15pt;
+  font-size: 15px;
   height: 45px;
   line-height: 45px;
   text-align: center;
   -webkit-appearance: none;
   user-select: none;
+  &--warn {
+    color: $danger;
+  }
 }
 
 .wen-button:active {
@@ -25,7 +28,12 @@
   color: #fff;
   padding: 0 8px;
 }
-.wen-button--normal {
+.wen-button--warn {
+  background-color: $danger;
+  color: #fff;
+  padding: 0 8px;
+}
+.wen-button--middle {
   padding: 0 15px;
   font-size: 14px;
 }
@@ -48,3 +56,28 @@
   background-color: #eee;
   border: 1px solid #e5e5e5;
 }
+
+@b wen-button {
+  color: #fff;
+  transform: scale(1);
+
+  @e middle {
+    background: #0067ED;
+  }
+
+  @m islink {
+    color: red;
+  }
+}
+
+// .wen-button {
+//   -webkit-transform:scale(1);
+//   color:#fff;
+//   transform:scale(1)
+// }
+// .wen-button__middle {
+//   background:#0067ed
+// }
+// .wen-button--islink {
+//   color:red
+// }

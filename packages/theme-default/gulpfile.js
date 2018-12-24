@@ -2,14 +2,13 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss')
-var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
-var browsers = ['ie > 9', 'last 2 versions', 'Android >= 4.0', 'iOS >= 7', 'Safari >= 8'];
+var salad = require('postcss-salad')(require('./salad.config.json'))
 gulp.task('compile', function() {
   var plugins = [
-    autoprefixer({ browsers }),
+    salad,
     cssnano()
-  ];  
+  ];
   return gulp.src('./src/index.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(plugins))

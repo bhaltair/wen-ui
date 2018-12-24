@@ -15,6 +15,10 @@ export default {
     }
   },
   props: {
+    uploadKey: {
+      type: String,
+      default: 'uploadfile'
+    },
     beforeRead: Function,
     afterRead: Function,
     success: Function,
@@ -66,6 +70,7 @@ export default {
       if (oversize) {
         return this.$emit('oversize', true)
       }
+      // emit
       this.afterRead && this.afterRead(files)
       // 开始上传
       files.map(file => {
@@ -88,7 +93,7 @@ export default {
     uploadFile (file) {
       var fd = new FormData()
       var request = new XMLHttpRequest()
-      fd.append('uploadfile', file)
+      fd.append(this.uploadKey, file)
       request.open('POST', this.uploadUrl)
       const progressFn = (oEvent) => {
         if (oEvent.lengthComputable) {
@@ -99,7 +104,7 @@ export default {
         }
       }
       const successFn = (event) => {
-        this.success(event.loaded / event.total * 100)
+        this.success(event)
       }
       const errorFn = res => {
         this.$emit('uploadErr')
